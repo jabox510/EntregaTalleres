@@ -26,7 +26,7 @@ public class Main {
             switch (opcion) {
 
                 case 1:
-                    do {
+                    //do {
                         System.out.println("\nSeleccione una opción:");
                         System.out.println("1. CANDIDATO 1");
                         System.out.println("2. CANDIDATO 2");
@@ -93,15 +93,9 @@ public class Main {
                             case 4:
                                 System.out.println("votacion finalizada");
                                 break;
-
-
                         }
-
-
-                    }while (voto != 4) ;
-
+                    //}while (voto != 4) ;
                     break;
-
                 case 2:
                     System.out.println("\nseleccione una opcion: :");
                     System.out.println("1.CANDIDATO 1");
@@ -110,9 +104,9 @@ public class Main {
                     candidato = teclado.nextInt();
                     switch (candidato) {
                         case 1:
-                            System.out.println("VALOR TOTAL POR INTERNET"+inter1*700000);
-                            System.out.println("VALOR TOTAL POR TELEVISION"+tv1*600000);
-                            System.out.println("VALOR TOTAL POR INTERNET"+radio1*200000);
+                            System.out.println("VALOR TOTAL POR INTERNET $ " + inter1*700000);
+                            System.out.println("VALOR TOTAL POR TELEVISION $ " + tv1*600000);
+                            System.out.println("VALOR TOTAL POR RADIO $ " + radio1*200000);
                             break;
                         case 2:
                             System.out.println("VALOR TOTAL POR INTERNET"+inter2*700000);
@@ -125,7 +119,35 @@ public class Main {
                             System.out.println("VALOR TOTAL POR INTERNET"+radio3*200000);
                             break;
                     }
+                break;
+                    case 3:
+                    System.out.println("EL TOTAL DE VOTOS CANDIDATO 1 ES "+candidato1);
+                    System.out.println("EL TOTAL DE VOTOS CANDIDATO 2 ES "+candidato2);
+                    System.out.println("EL TOTAL DE VOTOS CANDIDATO 3 ES "+candidato3);
                     break;
+                    case 4:
+                        System.out.println("EL TOTAL DE VOTANTES FUE "+ (candidato1+candidato2+candidato3));
+                        break;
+                case 5:
+                    int totvotos = (candidato1+candidato2+candidato3);
+                    System.out.println("EL PORCENTAJE DEL CANDIDATO 1 ES " + String.format("%.2f", (candidato1 * 100.0) / totvotos) + "%");
+                    System.out.println("EL PORCENTAJE DEL CANDIDATO 2 ES " + String.format("%.2f", (candidato2 * 100.0) / totvotos) + "%");
+                    System.out.println("EL PORCENTAJE DEL CANDIDATO 3 ES " + String.format("%.2f", (candidato3 * 100.0) / totvotos) + "%");
+                    break;
+                case 6:
+                    int costo1 = inter1 * 700000 + tv1 * 600000 + radio1 * 200000;
+                    int costo2 = inter2 * 700000 + tv2 * 600000 + radio2 * 200000;
+                    int costo3 = inter3 * 700000 + tv3 * 600000 + radio3 * 200000;
+                    System.out.println("EL PROMEDIO DEL VALOR DE LAS CAMPAÑAS ES " + ((costo1 + costo2 + costo3) / 3));
+
+                    break;
+                case 7:
+                     candidato1 = 0;
+                     candidato2 = 0;
+                     candidato3 = 0;
+                    System.out.println("URNAS VACIAS");
+                     break;
+
             }
 
 
@@ -133,4 +155,3 @@ public class Main {
         } while (opcion != 8);
     }
 }
-
